@@ -14,6 +14,8 @@ Apache2
 Python 2.7  
 Postgresql  
 psql  
+Flask  
+
 
 
 ## Get a server
