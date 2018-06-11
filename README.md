@@ -2,10 +2,14 @@
 Udacity Nanodegree Project06
 
 ## Info
-# Basic Info
-Local Machine OS: Mac OS
-public IP address: 52.79.146.188
-# Programs
+### Basic Info
+Local Machine OS: Mac OS  
+public IP address: 52.79.146.188  
+DNS: http://52.79.146.188  
+DNS: http://52-79-146-188.ap-northeast-2a.compute.amazonaws.com  
+Redirection URI: http://52-79-146-188.ap-northeast-2a.compute.amazonaws.com/oauth2callback  
+
+### Programs
 Apache2  
 Python 2.7  
 Postgresql  
