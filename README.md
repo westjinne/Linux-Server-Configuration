@@ -90,6 +90,8 @@ Use terminal: <code>sudo dpkg-reconfigure tzdata</code>
 And select the reigion.  
 
 ### 10. Install and configure Apache to serve a Python mod_wsgi application
+If python is not installed, 
+Use terminal: <code>sudo apt-get install python</code>  
 Use terminal: <code>sudo apt-get install apache2</code>  
 Use terminal: <code>sudo apt-get install libapache2-mod-wsgi</code>  
 Use terminal: <code>sudo a2enmod wsgi</code>  
