@@ -2,8 +2,15 @@
 Udacity Nanodegree Project06
 
 ## Info
+# Basic Info
 Local Machine OS: Mac OS
 public IP address: 52.79.146.188
+# Programs
+Apache2  
+Python 2.7  
+Postgresql  
+psql  
+
 
 ## Get a server
 ### 1. Start a new Ubuntu Linux server instance on Amazon Lightsail. 
