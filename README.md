@@ -110,7 +110,7 @@ Use terminal: <code>sudo su - postgres</code>
 Use terminal: <code>sudo apt-get install git</code>  
 
 ## Deploy the Item Catalog project
-### 13. Clone and setup Item Catalog project from the Githun repo.
+### 13. Clone and setup Item Catalog project from the Github repo.
 Use grader terminal: <code>mkdir /var/www/catalog</code>  
 Use grader terminal: <code>sudo git clone https://github.com/westjinne/Build-an-Item-Catalog.git</code>  
 Move to upper directory.  
@@ -118,7 +118,63 @@ Use grader terminal: <code>cd .. </code>
 Change owner.
 Use grader terminal: <code>sudo chown -R grader:grader catalog/</code>  
 Move to catalog directory
-User grader terminal: <code>cd /var/www/catalog/catalog</code>
+Use grader terminal: <code>cd /var/www/catalog/catalog</code>
 Rename application.py: <code>my application.py __init__.py</code>  
 
 ### 14. Set it up in the server so that it functions correctly when visiting the server's IP address in a browser.
+Install pip.  
+Use grader terminal: <code>sudo apt-get install python-pip</code>  
+Use grader terminal: <code>sudo apt-get install python-virtualvenv</code>  
+Use grader terminal: <code>cd /var/www/catalog/catalog</code>  
+Use grader terminal: <code>sudo vireualenv -p python venv</code>  
+Use grader terminal: <code>sudo chown -R grader:grader venv</code>  
+Use grader terminal: <code>. venv/bin/activate</code>  
+
+After go in to the venv, install all the things.  
+Use venv terminal: <code>pip install httplib2</code>  
+Use venv terminal: <code>pip install requests</code>  
+Use venv terminal: <code>pip install --upgrade oauth2client</code>  
+Use venv terminal: <code>pip install sqlalchemy</code>  
+Use venv terminal: <code>pip install flask</code>  
+Use venv terminal: <code>sudo apt-get install libpq-dev</code>  
+Use venv terminal: <code>pip install psycopg2</code>
+Use venv terminal: <code>deactivate</code>  
+
+And then, run <code>__init__.py</code>
+Use grader terminal: <code>python __init__.py</code>
+
+❗️I thought there might be something when I go to 127.0.0.1, but it doesn't work. I'm a bit puzzled.  
+
+Create <code>catalog.conf</code>file.  
+Use grader terminal: <code>sudo nano /etc/apache2/sites-available/catalog.conf</code>
+Set ServerName, ServerAlias and WSGIScriptAlias
+<pre><code>
+ServerName 52.79.146.188
+ServerAlias 52-79-146-188.ap-northeast-2a.compute.amazonaws.com
+WSGIScriptAlias /var/www/catalog/catalog.wsgi</code></pre>  
+
+And add <code>WSGIPythonPath</code> in <code>/etc/apache2/mods-enabled/wsgi.conf</code>  
+<code>WSGIPythonPath /var/www/catalog/catalog/venv/lib/python2.7/site-packages</code>  
+
+Use grader terminal: <code>sudo a2ensite catalog</code>  
+Use grader terminal: <code>sudo service apache2 reload</code>  
+
+And set up <code>catalog.wsgi</code> to make flask application work.  
+Use grader terminal: <code>/var/www/catalog/catalog.wsgi</code>  
+<pre><code>
+activate_this = '/var/www/catalog/catalog/venv/bin/activate_this.py'
+with open(activate_this) as file_:
+    exec(file_.read(), dict(__file__=activate_this))
+
+import sys
+import logging
+logging.basicConfig(stream=sys.stderr)
+sys.path.insert(0, "/var/www/catalog/catalog/")
+sys.path.insert(1, "/var/www/catalog/")
+
+from catalog import app as application
+
+application.secret_key = "..."
+</code></pre>
+
+And <code>sudo service apache2 restart</code> to restart apache.  
