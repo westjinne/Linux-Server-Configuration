@@ -121,6 +121,4 @@ Move to catalog directory
 User grader terminal: <code>cd /var/www/catalog/catalog</code>
 Rename application.py: <code>my application.py __init__.py</code>  
 
-❗️I've got stuck from here! what should I have to do next? 
-
 ### 14. Set it up in the server so that it functions correctly when visiting the server's IP address in a browser.
