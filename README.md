@@ -60,14 +60,14 @@ Use terminal: <code>sudo ufw deny 22</code>
 Use terminal: <code>sudo ufw enable</code>, <code>y</code>
 
 Go to Amazon Lightsail, change Firewall Informations. 
-1. Delete SSH  
+1. Deny SSH default port.  
 2. Add Custom(application)-UDP(protocol)-123(port range)  
 3. Add Custom(application)-TCP(protocol)-2200(port range)  
 
 ## Give grader access
 ### 6. Create a new user account named <code> grader</code>.
 User terminal: <code>sudo adduser grader</code>  
-And set the pwd.  
+And type the pwd to setup the grader's information.  
 
 ### 7. Give  <code>grader</code> the permission to  <code>sudo</code>.
 Use terminal: <code>sudo visudo</code>  
@@ -80,7 +80,7 @@ Make a file that will save the key.
 Use Local terminal: <code>cd ~/.ssh</code>  
 Use Local terminal: <code>touch grader_key</code>  
 Enter pwd twice for grader_key and grader_key.pub  
-Use Local terminal: <code>cat ~/.ssh/grader_key.pub</code> and copy the contents.  
+Use Ubuntu terminal: <code>cat ~/.ssh/grader_key.pub</code> and copy the contents.  
 Login to the grader.  
 Use grader terminal: <code>mkdir ~/.ssh</code>  
 Use grader terminal: <code>sudo nano ~/.ssh/authorized_keys</code> and paste the contents.
@@ -111,7 +111,7 @@ Use terminal: <code>sudo apt-get install git</code>
 
 ## Deploy the Item Catalog project
 ### 13. Clone and setup Item Catalog project from the Githun repo.
-Use grader terminal: <code>mkdir /var/www/catelog</code>  
+Use grader terminal: <code>mkdir /var/www/catalog</code>  
 Use grader terminal: <code>sudo git clone https://github.com/westjinne/Build-an-Item-Catalog.git</code>  
 Move to upper directory.  
 Use grader terminal: <code>cd .. </code>  
