@@ -44,7 +44,8 @@ Use terminal: <code>sudo apt-get upgrade</code>
 
 ### 4. change the SSH port from 22 to 2200. 
 Edit the <code>/etc/ssh/sshd_config</code> file.  
-Use terminal: <code>sudo nano /etc/ssh/sshd_config</code>, change <code>Port 22</code> to <code>Port 2200</code>  
+Use terminal: <code>sudo nano /etc/ssh/sshd_config</code>   
+change <code>Port 22</code> to <code>Port 2200</code>  
 Use terminal: <code>Command</code> + X and press <code>Y</code>, <code>Enter</code>  
 Reatart the SSH  
 Use terminal: <code>sudo service ssh restart</code>  
