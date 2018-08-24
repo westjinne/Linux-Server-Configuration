@@ -5,9 +5,9 @@ Udacity Nanodegree Project06
 ### Basic Info
 - Local Machine OS: Mac OS  
 - public IP address: 52.78.88.13
-- DNS: http://52.79.146.188  
-- DNS: http://52-79-146-188.ap-northeast-2a.compute.amazonaws.com  
-- Redirection URI: http://52-79-146-188.ap-northeast-2a.compute.amazonaws.com/oauth2callback  
+- DNS: http://52.78.88.13/  
+- DNS: http://52-78-88-13.ap-northeast-2a.compute.amazonaws.com  
+- Redirection URI: http://52-78-88-13.ap-northeast-2a.compute.amazonaws.com/oauth2callback  
 
 ### Programs
 - Apache2  
@@ -35,7 +35,7 @@ Use terminal: <code>Command</code> + X and press <code>Y</code>, <code>Enter</co
 Use terminal: <code>chmod 600 ~/.ssh/lightsail_key.rsa</code>  
 
 To connect with instance, 
-Use terminal: <code>ssh -i ~/.ssh/lightsail_key.rsa ubuntu@52.79.146.188</code>
+Use terminal: <code>ssh -i ~/.ssh/lightsail_key.rsa ubuntu@52.78.88.13</code>
 
 ## Secure the server
 ### 3. Update all currently installed packages  
