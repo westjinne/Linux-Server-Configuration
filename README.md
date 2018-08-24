@@ -129,7 +129,7 @@ Use grader terminal: <code>sudo apt-get install python-virtualenv</code>
 Use grader terminal: <code>cd /var/www/catalog/catalog</code>  
 Use grader terminal: <code>sudo virtualenv -p python venv</code>  
 Use grader terminal: <code>sudo chown -R grader:grader venv</code>  
-Use grader terminal: <code>. venv/bin/activate</code>  
+Use grader terminal: <code>source ./venv/bin/activate</code>  
 
 After go in to the venv, install all the things.  
 Use venv terminal: <code>pip install httplib2</code>  
