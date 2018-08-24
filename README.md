@@ -125,7 +125,7 @@ Rename application.py: <code>my application.py __init__.py</code>
 ### 14. Set it up in the server so that it functions correctly when visiting the server's IP address in a browser.
 Install pip.  
 Use grader terminal: <code>sudo apt-get install python-pip</code>  
-Use grader terminal: <code>sudo apt-get install python-virtualvenv</code>  
+Use grader terminal: <code>sudo apt-get install python-virtualenv</code>  
 Use grader terminal: <code>cd /var/www/catalog/catalog</code>  
 Use grader terminal: <code>sudo vireualenv -p python venv</code>  
 Use grader terminal: <code>sudo chown -R grader:grader venv</code>  
