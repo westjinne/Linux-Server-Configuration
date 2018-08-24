@@ -127,7 +127,7 @@ Install pip.
 Use grader terminal: <code>sudo apt-get install python-pip</code>  
 Use grader terminal: <code>sudo apt-get install python-virtualenv</code>  
 Use grader terminal: <code>cd /var/www/catalog/catalog</code>  
-Use grader terminal: <code>sudo vireualenv -p python venv</code>  
+Use grader terminal: <code>sudo virtualenv -p python venv</code>  
 Use grader terminal: <code>sudo chown -R grader:grader venv</code>  
 Use grader terminal: <code>. venv/bin/activate</code>  
 
