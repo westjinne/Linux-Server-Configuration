@@ -120,7 +120,7 @@ Change owner.
 Use grader terminal: <code>sudo chown -R grader:grader catalog/</code>  
 Move to catalog directory
 Use grader terminal: <code>cd /var/www/catalog/catalog</code>
-Rename application.py: <code>my application.py __init__.py</code>  
+NO NEED FOR WSGI : Rename application.py: <code>my application.py __init__.py</code>  
 
 ### 14. Set it up in the server so that it functions correctly when visiting the server's IP address in a browser.
 Install pip.  
@@ -148,11 +148,19 @@ Use grader terminal: <code>python __init__.py</code>
 
 Create <code>catalog.conf</code>file.  
 Use grader terminal: <code>sudo nano /etc/apache2/sites-available/catalog.conf</code>
-Set ServerName, ServerAlias and WSGIScriptAlias
+Set ServerName and WSGIScriptAlias
 <pre><code>
-ServerName 52.79.146.188
-ServerAlias 52-79-146-188.ap-northeast-2a.compute.amazonaws.com
-WSGIScriptAlias /var/www/catalog/catalog.wsgi</code></pre>  
+ServerName 52.79.167.127
+WSGIScriptAlias / /var/www/catalog/catalog.wsgi
+WSGIDaemonProcess catalog user=www-data group=www-data
+
+<Directory /var/www/catalog/catalog>
+WSGIProcessGroup catalog
+WSGIApplicationGroup %{GLOBAL}
+Order deny,allow
+Allow from all
+</Directory>
+</code></pre>  
 
 And add <code>WSGIPythonPath</code> in <code>/etc/apache2/mods-enabled/wsgi.conf</code>  
 <code>WSGIPythonPath /var/www/catalog/catalog/venv/lib/python2.7/site-packages</code>  
@@ -170,10 +178,9 @@ with open(activate_this) as file_:
 import sys
 import logging
 logging.basicConfig(stream=sys.stderr)
-sys.path.insert(0, "/var/www/catalog/catalog/")
-sys.path.insert(1, "/var/www/catalog/")
+sys.path.append("/var/www/catalog/catalog/")
 
-from catalog import app as application
+from application import app as application
 
 application.secret_key = "..."
 </code></pre>
