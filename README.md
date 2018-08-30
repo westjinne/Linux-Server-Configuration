@@ -3,11 +3,11 @@ Udacity Nanodegree Project06
 
 ## Info
 ### Basic Info
-- Local Machine OS: Mac OS  
-- public IP address: 52.78.88.13
-- DNS: http://52.78.88.13/  
-- DNS: http://52-78-88-13.ap-northeast-2a.compute.amazonaws.com  
-- Redirection URI: http://52-78-88-13.ap-northeast-2a.compute.amazonaws.com/oauth2callback  
+- Local Machine OS: Windows OS  
+- public IP address: 52.79.167.127
+- DNS: http://52.79.167.127/  
+- DNS: http://ec2-52-79-167-127.ap-northeast-2.compute.amazonaws.com 
+- Redirection URI: http://ec2-52-79-167-127.ap-northeast-2a.compute.amazonaws.com/oauth2callback  
 
 ### Programs
 - Apache2  
