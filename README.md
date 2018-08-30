@@ -154,12 +154,12 @@ ServerName 52.79.167.127
 WSGIScriptAlias / /var/www/catalog/catalog.wsgi
 WSGIDaemonProcess catalog user=www-data group=www-data
 
-<Directory /var/www/catalog/catalog>
+\<Directory /var/www/catalog/catalog\>
 WSGIProcessGroup catalog
 WSGIApplicationGroup %{GLOBAL}
 Order deny,allow
 Allow from all
-</Directory>
+\</Directory\>
 </code></pre>  
 
 And add <code>WSGIPythonPath</code> in <code>/etc/apache2/mods-enabled/wsgi.conf</code>  
